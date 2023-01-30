@@ -27,14 +27,16 @@
         var px;
         var py;
         var anima;
+        var estado;
 
         function inicia(){
 
-            vel = 5;
+            vel = 2;
             dx = 1;
             dy = 0;
             px = 0;
             py = 0;
+            estado = 1; // 1 = movendo - 2 = parado
             jog = document.getElementById("jogador")
             jog.addEventListener("click", function(){
                 cancelAnimationFrame(anima)
@@ -43,6 +45,16 @@
 
 
 }
+
+        function moverParar (){
+
+            if(estado){
+                estado = 0;
+                jog.style.backgroundColor= "f00"
+            }
+
+        }
+
 
         function game(){
 
